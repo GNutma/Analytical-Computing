@@ -19,8 +19,8 @@ nonzero_location = []
 nonzero_getallen = []
 for getal in gegevenVierkant:
     if getal != 0:
-        nonzero_getallen.append(getal)
-        nonzero_location.append(count)
+        nonzero_getallen.append(getal)  # slaat alle getallen die niet 0 zijn op in nonzero_getallen
+        nonzero_location.append(count)  # Slaat de locatie op van deze nonzero getallen
     count+= 1
 X = numpy.array([[2/3, 0, -1], #Berekening voor X1
                  [2/3, -1, 0], #Berekening voor X2
@@ -35,11 +35,11 @@ X = numpy.array([[2/3, 0, -1], #Berekening voor X1
 BerekeningX = numpy.array([X[nonzero_location[0]], X[nonzero_location[1]], X[nonzero_location[2]]])
 getallen = numpy.array([nonzero_getallen[0],nonzero_getallen[1],nonzero_getallen[2]])
 
-if numpy.linalg.det(BerekeningX) == 0:
+if numpy.linalg.det(BerekeningX) == 0:   # waarde van Determinant wordt bekeken gecontreerd dat deze niet 0 is dit moet eerst want anders is er geen oplossing.
     print("\nBerekening kan niet gemaakt worden,\n    Determinant = 0")
 else:
     solve = numpy.linalg.solve(BerekeningX, getallen)    # berekent de ombekenden variabelen
-    som = (int(round(solve[0])))
+    som = (int(round(solve[0]))) #De voorheen onbekende som
     opgelosteVierkant = [int(round(numpy.dot(getal, solve))) for getal in X]
     v = opgelosteVierkant
     check = [(v[0]+v[1]+v[2]), #Horizontale check
@@ -52,7 +52,7 @@ else:
              (v[2]+v[4]+v[6])] #Diagonale check
 
     gelukt = True
-    for total in check:
+    for total in check: # checkt of de totaal van elke regel gelijk is aan de som
         if total != som:
             gelukt = False
 
