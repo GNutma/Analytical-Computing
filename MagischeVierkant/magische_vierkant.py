@@ -5,12 +5,12 @@ def printVierkant(Vierkant):
 # gegevenVierkant = numpy.array([0, 3, 0,
 #                                0, 0, 9,
 #                                6, 0, 0])
-gegevenVierkant = numpy.array([ 0, 3, 0,
-                                0, 0, 9,
-                                0, 0, 2])
-# gegevenVierkant = numpy.array([0, 3, 4,
-#                                1, 0, 0, 
-#                                0, 0, 0])
+# gegevenVierkant = numpy.array([ 0, 3, 0,
+#                                 0, 0, 9,
+#                                 0, 0, 2])
+gegevenVierkant = numpy.array([0, 3, 0,
+                               0, 0, 9, 
+                               6, 0, 0])
 v = gegevenVierkant
 print("Gegeven vierkant:")
 printVierkant(v)
