@@ -5,7 +5,7 @@ file = open("verkeerssimulatie-rechteweg-posities.csv", "r")
 auto1 = []
 auto2 = []
 for regel in file:
-    regel = regel.strip("\n").split(";")
+    regel = regel.split(";")
     auto1.append(float(regel[1]))
     auto2.append(float(regel[2]))
 
